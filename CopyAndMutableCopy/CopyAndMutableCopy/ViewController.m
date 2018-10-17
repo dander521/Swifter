@@ -17,12 +17,20 @@
 @property (nonatomic, copy) NSString *cString;
 @property (nonatomic, copy) NSArray *cArray;
 
+@property (nonatomic, copy) NSMutableArray *arr;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // copy 对象的 副本是不可变对象 不可进行可变操作
+    /*
+    self.arr = [NSMutableArray new];
+    [self.arr addObject:@"1"];
+     */
     /*
     // 使用strong时，如果这个属性指向一个可变对象，修改可变对象时，这个属性值也会被修改
     NSMutableString *mString = [NSMutableString stringWithString:@"strong"];
